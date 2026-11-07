@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page-bg: #0d0b0a;
+  --color-surface: #171311;
+  --color-surface-2: #201a17;
+  --color-border-hairline: rgba(255, 255, 255, 0.08);
+  --color-text-primary: #f5efe8;
+  --color-text-muted: #a39a92;
+  --color-gold: #f2b44e;
+  --color-saffron: #ff8a3d;
+
+  --font-sans: "InterVariable", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ease-cal: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Base resets & typography */
+html, body {
+  background-color: #0d0b0a;
+  color: #f5efe8;
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cal.com style utility classes */
+.cal-card {
+  background-color: #171311;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem; /* 20px */
+}
+
+.cal-card-interactive {
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cal-card-interactive:hover {
+  background-color: #201a17;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.cal-pill {
+  background: rgba(23, 19, 17, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+}
+
+/* Headings with tight tracking & text-wrap */
+.cal-headline {
+  color: #f5efe8;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.cal-subline {
+  color: #a39a92;
+  font-weight: 400;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.cal-label {
+  color: #f2b44e;
+  font-weight: 600;
+  font-size: 0.75rem; /* 12px */
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Button styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  border-radius: 9999px;
+  background-color: #f5efe8;
+  color: #0d0b0a;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: #ffffff;
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  border-radius: 9999px;
+  background-color: #171311;
+  color: #f5efe8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background-color: #201a17;
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Subtle Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0b0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #201a17;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f2b44e;
+}
+
+/* Accessibility: Reduced motion adjustments */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
